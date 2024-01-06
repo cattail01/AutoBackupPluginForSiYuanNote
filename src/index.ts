@@ -159,6 +159,8 @@ export default class PluginSample extends Plugin {
             }
         });
 
+        // 设置面板
+        // todo 调整设置面板功能，使其能够满足我的需求
         this.settingUtils = new SettingUtils(this, STORAGE_NAME);
         this.settingUtils.addItem({
             key: "Input",
@@ -213,11 +215,17 @@ export default class PluginSample extends Plugin {
             button: {
                 label: "Button",
                 callback: () => {
-                    showMessage("Button clicked");
+                    // showMessage("Button clicked");
+                    var value = this.settingUtils.get("Input");
+                    if(value != null)
+                    {
+                        console.log(value);
+                    }
                 }
             }
         });
 
+        // todo 打通从settings读取数据
         this.protyleSlash = [{
             filter: ["insert emoji 😊", "插入表情 😊", "crbqwx"],
             html: `<div class="b3-list-item__first"><span class="b3-list-item__text">${this.i18n.insertEmoji}</span><span class="b3-list-item__meta">😊</span></div>`,

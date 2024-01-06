@@ -89,7 +89,6 @@
         </SettingPanel>
     </div>
 </div>
-
 <style lang="scss">
     .config__panel {
         height: 100%;
